@@ -9,4 +9,6 @@ After entered superusername and password, Superuser can view all the list of eve
 Installed Package :-
 
 Django==5.0.1                                                                                                                                                   
-djangorestframework==3.14.0                                                                                                                                                                                                                                                                                                                                                                                                         virtualenv==20.24.5
+djangorestframework==3.14.0                                                                                                                                                                                                                                                                          
+
+virtualenv==20.24.5
