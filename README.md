@@ -4,7 +4,7 @@ For performing CRUD operation = py manage.py runserver = http://127.0.0.1:8000 .
 For django admin pannel user click = http://127.0.0.1:8000/admin .                                                                                  
 superusername=user                                                                                                                                  
 password=user                                                                                                                                          
-
+After entered superusername and password, Superuser can view all the list of events in django admin pannel.
 
 Installed Package :-
 
