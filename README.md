@@ -8,5 +8,5 @@ password=user
 
 Installed Package :-
 
-Django  5.0.1 
+Django  5.0.1                                                                                                                                                   
 djangorestframework 3.14.0
