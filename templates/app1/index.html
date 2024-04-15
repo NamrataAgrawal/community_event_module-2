@@ -1,0 +1,93 @@
+{% extends 'app1/base.html' %}
+
+
+{% block content%}
+
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col col-8 offset-2">
+                <h1 class="alert alert-warning text-center">Event Registeration Form</h1>
+
+           
+
+
+    <form method="post">
+
+        {% csrf_token%}
+       <h5 style="color: black"> {{form.as_p}} </h5>
+
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+</div>
+</div>
+
+
+
+
+<br><br><br>
+<h1 class="alert alert-warning text-center">Event Records</h1>
+
+<table class="table my-5" >
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Sno.</th>
+        <th scope="col">event_name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">date</th>
+        <th scope="col">location</th>
+        <th scope="col">title</th>
+        <th scope="col">description</th>
+        <th scope="col">is_RSVP</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {% for i in data %}
+
+
+      <tr>
+        <th scope="row">{{i.id}}</th>
+        <td>{{i.event_name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.password}}</td>
+        <td>{{i.date}}</td>
+        <td>{{i.location}}</td>
+        <td>{{i.title}}</td>
+        <td>{{i.description}}</td>
+        <td>{{i.is_RSVP}}</td>
+
+
+
+        <td>
+            <a href="{% url  'update'  i.id%}">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <!-- <i class="fas fa-pen-square"></i> -->
+        </a>
+        <form action=" {% url  'delete'  i.id%}" method="post" class="d-inline">
+            
+            {% csrf_token %} 
+            <button type="submit">
+              <!-- <i class="fas fa-trash-alt"></i> -->
+                <i class="fa-solid fa-trash"></i>
+              
+            </button>
+        </form>
+        </td>
+
+      </tr>
+     
+{% endfor %}
+  
+  
+    </tbody>
+  </table>
+
+</div>
+
+{% endblock content %}
+
